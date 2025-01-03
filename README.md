@@ -1,5 +1,4 @@
-# アプリ名
-繋がる実り
+# 繋がる実り
 
 # 概要
 このアプリは、農産物直売所を共有できるSNSプラットフォームです。ユーザーは、マップから訪れた場所、感想、写真、そして星評価を投稿し、他の消費者と情報を交換することができます。
@@ -63,7 +62,7 @@
 ・マップ検索    
 
 # 開発環境
-・OS：Mac + ターミナル　または　Windows11 + Git Bash　または　Windows10 + Git Bash  
+・Windows11 + Git Bash  
 ・言語：HTML、CSS、JavaScript、Ruby  
 ・フレームワーク：Ruby on Rails  
 ・JSライブラリ：jQuery  
