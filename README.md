@@ -67,5 +67,3 @@
 ・フレームワーク：Ruby on Rails  
 ・JSライブラリ：jQuery  
 ・データベース：PostgreSQL  
-
->>>>>>> db830fd8e65a091e818f118a984399a3d8ea4f5c
