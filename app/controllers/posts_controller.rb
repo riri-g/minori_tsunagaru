@@ -46,10 +46,13 @@ class PostsController < ApplicationController
   def confirm
     @posts = current_user.posts.draft.page(params[:page]).reverse_order
   end
+
+  
+  
   
   private
   def post_params
-    params.require(:post).permit(:user_id, :location, :text, :image, :status)
+    params.require(:post).permit(:user_id, :location, :text, :image, :status, :category_id)
   end
 
 end
