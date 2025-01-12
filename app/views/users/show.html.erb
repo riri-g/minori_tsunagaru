@@ -22,6 +22,27 @@
           <%= link_to 'フォローする', user_relationships_path(@user.id),  data: { turbo_method: :post }, class:"btn btn-success" %>
         </p>
       <% end %>
+          <div class="d-flex justify-content-end mt-4 me-4">
+       <div class="me-2">
+       
+       <% unless @user.id == current_user.id %>
+        <% if @is_room == true %>
+         <%= link_to room_path(@room_id) do %>
+          <i class="fa-regular fa-envelope message"></i>
+         <% end %>
+        <% else %>
+         <%= form_for @room do |f| %>
+          <%= fields_for :entry, @entry do |e| %>
+            <%= e.hidden_field :user_id, value: @user.id %>
+          <% end %>
+          <%= f.submit "メッセージを送る", class: "message_link" %>
+        <% end %>
+       <% end %>
+       </div>
+      <div>
+    <% end %>
+  </div>
+</div>
     <% end %>
     <div class="d-flex w-100">
       <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.svg", class: "mb-3 profile-img" %>
@@ -35,8 +56,11 @@
         <h6>フォロワー<%= @follower_users.count %></h6>
       <% end %>
     </div>
+   
     <div class="row mt-5 index-left w-100">
-      <% @posts.each do |post| %>
+    <h2>公開済み投稿</h2>
+    <% if @published_posts.any? %>
+      <% @published_posts.each do |post| %>
         <div class="one-post col-sm-3 mb-3">
           <%= link_to post_path(post) do %>
             <%= attachment_image_tag post, :image, format: 'jpeg', size: '200x133' %>
@@ -45,7 +69,26 @@
           <% end %>
         </div>
       <% end %>
-    </div>
-    <%= paginate @posts %>
+      <%= paginate @published_posts %>
+    <% else %>
+      <p>公開済みの投稿はありません。</p>
+    <% end %>
+
+    <h2>下書き投稿</h2>
+    <% if @draft_posts.any? %>
+      <% @draft_posts.each do |post| %>
+        <div class="one-post col-sm-3 mb-3">
+          <h3><%= post.location %></h3>
+          <p><%= post.text %></p>
+          <%= attachment_image_tag post, :image, format: 'jpeg', size: '200x133' %>
+          <p><span class="badge badge-secondary">下書き</span></p>
+          <%= link_to '編集する', edit_post_path(post), class: 'btn btn-warning' %>
+        </div>
+      <% end %>
+      <%= paginate @draft_posts %>
+    <% else %>
+      <p>下書きの投稿はありません。</p>
+    <% end %>
   </div>
+</div>
 </div>

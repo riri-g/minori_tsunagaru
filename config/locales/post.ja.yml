@@ -1,0 +1,18 @@
+ja:
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            location:
+              blank: "場所を入力してください。"
+            text:
+              blank: "感想を入力してください。"
+            image:
+              blank: "画像を入力してください。"
+        comment:
+          attributes:
+            comment:
+              blank: "コメントを入力してください"

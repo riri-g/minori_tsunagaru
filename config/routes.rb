@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'categories/index'
   get 'categories/edit'
   resources :categories, except: [:new, :show]
-  
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create, :index, :show]
+
   devise_for :users
   resources :users, only:[:index, :show, :edit, :update] do
     member do
@@ -15,6 +17,9 @@ Rails.application.routes.draw do
     resource :favorites, only:[:create, :destroy]
     collection do
       get 'confirm'
+    end
+    collection do
+      get 'search_by_category'
     end
   
   end

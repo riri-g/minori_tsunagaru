@@ -5,7 +5,7 @@ class Post < ApplicationRecord
     validates :user_id, presence: true
     has_many :comments, dependent: :destroy
     has_many :favorites, dependent: :destroy
-    has_many :categories, dependent: :destroy
+    belongs_to :category
     
     validates :location, presence: true, length: { maximum: 15 }
     validates :text, presence: true, length: { maximum: 195 }

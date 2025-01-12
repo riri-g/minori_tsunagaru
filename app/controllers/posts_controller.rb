@@ -14,10 +14,29 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.published.page(params[:page]).reverse_order 
-    @posts = @posts.where('location LIKE ?', "%#{params[:search]}%") if params[:search].present?
+    # 公開された投稿またはログインユーザーの投稿を取得
+    @posts = Post.where("status = ? OR user_id = ?", Post.statuses[:published], current_user.id)
+  
+    # カテゴリーリストを取得
+    @categories = Category.all
+  
+    # 投稿を最新順で取得
+    @posts = @posts.order(created_at: :desc)
+  
+    # 検索キーワードによるフィルタリング
+    if params[:search].present?
+      @posts = @posts.where('location LIKE ?', "%#{params[:search]}%")
+    end
+  
+    # カテゴリーによるフィルタリング
+    if params[:category_id].present?
+      @posts = @posts.where(category_id: params[:category_id])
+    end
+  
+    # ページネーションを適用
+    @posts = @posts.page(params[:page]).per(10)
   end
-
+  
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
@@ -47,12 +66,23 @@ class PostsController < ApplicationController
     @posts = current_user.posts.draft.page(params[:page]).reverse_order
   end
 
+  def search_by_category
+    if params[:category_id].present?
+      @posts = Post.where(category_id: params[:category_id]).order(created_at: :desc)
+    else
+      @posts = Post.all.order(created_at: :desc)
+    end
+  
+    @categories = Category.all # フォーム用
+    render :index # 検索結果を投稿一覧ページに表示
+  end
+
   
   
   
   private
   def post_params
-    params.require(:post).permit(:user_id, :location, :text, :image, :status, :category_id)
+    params.require(:post).permit(:user_id, :location, :address, :text, :image, :status, :category_id)
   end
 
 end
