@@ -8,29 +8,20 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.page(params[:page]).per(8).reverse_order
-    @published_posts = @user.posts.published.page(params[:page]).per(8).reverse_order # 公開済み投稿     
-    @draft_posts = @user.posts.draft.page(params[:page]).per(8).reverse_order # 下書き投稿
+    @published_posts = @user.posts.published.page(params[:page]).per(8).reverse_order
+     # 下書き投稿は、自分のものだけ取得
+    if @user == current_user
+      @draft_posts = @user.posts.draft.page(params[:page]).per(8).reverse_order
+    else
+      @draft_posts = Post.none # 他のユーザーの下書きは取得しない
+    end
+    
     @following_users = @user.following_user
     @follower_users = @user.follower_user
   
-    # 初期化
-    @is_room = false
-    @room_id = nil
-  
-    # roomがcreateされた時に現在ログインしているユーザーと、チャット相手になるユーザーの両方をEntriseテーブルから取得する。
-    @current_entry = Entry.where(user_id: current_user.id)
-    @another_entry = Entry.where(user_id: @user.id)
-  
-    unless @user.id == current_user.id
-      @current_entry.each do |current|
-        @another_entry.each do |another|
-          if current.room_id == another.room_id
-            @is_room = true
-            @room_id = current.room_id
-          end
-        end
-      end
-      unless @is_room
+    if @user != current_user
+      @room = current_user.rooms.joins(:entries).find_by(entries: { user_id: @user.id })
+      unless @room
         @room = Room.new
         @entry = Entry.new
       end

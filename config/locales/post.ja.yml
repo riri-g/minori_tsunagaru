@@ -6,6 +6,8 @@ ja:
       models:
         post:
           attributes:
+            category:
+              required: "カテゴリーを入力してください。"
             location:
               blank: "場所を入力してください。"
             text:

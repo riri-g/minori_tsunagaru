@@ -1,28 +1,37 @@
-<div class="row mt-3 mb-3 align-self-end">
-  <%= form_with url: posts_path, method: :get, local: true do |f| %>
-  
-    <%= f.text_field :search %>
-  <%= f.submit '検索する', name: nil %>
-  <br>
-  <%= f.label :category_id, 'カテゴリー' %>
-  <br>
-  <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
-  <br>
+<div class="row mt-3 mb-3 align-self-end center-form">
+  <%= form_with url: posts_path, method: :get, local: true, class: "search-form-4" do |f| %>
+    <%= f.submit '', class: "btn", aria: { label: "検索" } %> <!-- テキストなしのボタン -->
+    
+    <div class="form-group">
+      <%= f.text_field :search, placeholder: "キーワードを入力", class: "form-control" %>
+    </div>
+    <br>
+    <%= f.label :category_id, 'カテゴリー' %>
+    <br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
+    <br>
+    <!-- 検索ボタン -->
+    <%= f.submit '検索', class: "btn-flat-border" %>
   <% end %>
 </div>
 <div class="row mt-5 index-left w-100">
+ <% if @posts.any? %>
   <% posts.each do |post| %>
-  <div class="one-post col-sm-4 mb-3">
-    <%= link_to post_path(post) do %>
-    <p class="caption"><%= post.user ? post.user.name : "不明なユーザー" %></p>
-    <%= attachment_image_tag post, :image, format: 'jpeg', size: '200x200' %>
-    <p class="caption"><%= post.location %></p>
-    <p class="caption"><%= "#{post.comments.count} コメント" %></p>
-    <% end %>
-  </div>
+   <div class="one-post col-sm-4 mb-3">
+     <%= link_to post_path(post) do %>
+      <p class="caption"><%= post.user ? post.user.name : "不明なユーザー" %></p>
+      <%= attachment_image_tag post, :image, format: 'jpeg', size: '200x200' %>
+       <p class="caption"><%= post.location %></p>
+       <p class="caption"><%= "#{post.comments.count} コメント" %></p>
+       <% end %>
+   </div>
   <% end %>
+ <% else %>
+  <div class="col-12 text-center">
+    <p class="text-muted">一致する投稿がありません</p>
+  </div>
+ <% end %>
 </div>
-
 
 <%= paginate posts %>
    

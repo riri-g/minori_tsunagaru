@@ -1,25 +1,122 @@
-.page a,
-.next a,
-.last a,
-.first a,
-.prev a {
-  color: black;
-  margin-left: 10px;
-  margin-right: 10px;
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+.cover-new h1 {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.cover-new .form-label {
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
-.page a:hover,
-.next a:hover,
-.last a:hover,
-.first a:hover,
-.prev a:hover {
-  color: black;
+.cover-new {
+  height: 100%;
+  width: 100%;
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
 }
 
-.current {
+.form-label {
+  font-size: 20px;
+  
+}
+
+.form-group {
+  width: 600px;
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: rgb(86, 129, 126);
+  border: solid 2px rgb(86, 129, 126);
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: rgb(86, 129, 126);
+  color: white;
+}
+
+.cover-index {
+  height: 100%;
+  width: 100%;
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
+}
+
+.one-post img:hover {
+  transform: scale(1.2,1.2);
+}
+
+.caption {
+  color: black;
+  font-size: 100%;
+  text-decoration: none;
+}
+
+.index-left {
+  margin-left: 2.5rem!important;
+}
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-form-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px; /* フォームの最大幅を設定 */
+}
+
+.search-form-4 .form-group {
+  width: 50%;
+  margin-bottom: 15px;
+}
+
+.search-form-4 .form-control {
+  width: 50%;
+  padding: 10px;
+}
+
+.search-form-4 .btn {
+  margin-bottom: 10px; /* ボタンの間隔を調整 */
+  
+}
+
+.cover-show {
+  height: 100%;
+  width: 100%;
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
+}
+
+#text {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.comments {
+  margin-left: 5rem; /* 左側の余白 */
+  margin-top: 5rem;  /* 上側の余白 */
+  width: 80%;        /* コンテンツ幅を調整 */
+}
+
+
+h1{
+  color: rgb(86, 129, 126);/*文字色*/
   font-weight: bold;
+  padding: 0.5em 0;/*上下の余白*/
+  border-top: solid 3px rgb(86, 129, 126);/*上線*/
+  border-bottom: solid 3px rgb(86, 129, 126);/*下線*/
+  font-weight: bold; /* 太文字 */
 }
-
-.favorite_btn {
-    color: #000;
-  }

@@ -34,13 +34,13 @@ class PostsController < ApplicationController
     end
   
     # ページネーションを適用
-    @posts = @posts.page(params[:page]).per(10)
+    @posts = @posts.page(params[:page]).per(9)
   end
-  
+
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.page(params[:page]).per(7).reverse_order
+    @comments = @post.comments.page(params[:page]).per(9).reverse_order
   end
 
   def edit

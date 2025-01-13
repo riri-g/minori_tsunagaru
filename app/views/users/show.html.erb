@@ -24,7 +24,7 @@
       <% end %>
           <div class="d-flex justify-content-end mt-4 me-4">
        <div class="me-2">
-       
+
        <% unless @user.id == current_user.id %>
         <% if @is_room == true %>
          <%= link_to room_path(@room_id) do %>
@@ -58,7 +58,7 @@
     </div>
    
     <div class="row mt-5 index-left w-100">
-    <h2>公開済み投稿</h2>
+    <h2>公開済み</h2>
     <% if @published_posts.any? %>
       <% @published_posts.each do |post| %>
         <div class="one-post col-sm-3 mb-3">
@@ -74,8 +74,9 @@
       <p>公開済みの投稿はありません。</p>
     <% end %>
 
-    <h2>下書き投稿</h2>
-    <% if @draft_posts.any? %>
+    <% if @user == current_user %> <!-- ログイン中のユーザーと表示中のユーザーが一致する場合のみ表示 -->
+     <h2>下書き</h2>
+     <% if @draft_posts.any? %>
       <% @draft_posts.each do |post| %>
         <div class="one-post col-sm-3 mb-3">
           <h3><%= post.location %></h3>
@@ -85,10 +86,11 @@
           <%= link_to '編集する', edit_post_path(post), class: 'btn btn-warning' %>
         </div>
       <% end %>
-      <%= paginate @draft_posts %>
+     <%= paginate @draft_posts %>
     <% else %>
       <p>下書きの投稿はありません。</p>
     <% end %>
+    <% end %> <!-- 条件終了 -->
   </div>
 </div>
 </div>
