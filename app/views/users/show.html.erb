@@ -35,7 +35,9 @@
           <%= fields_for :entry, @entry do |e| %>
             <%= e.hidden_field :user_id, value: @user.id %>
           <% end %>
+          <p class="d-flex align-self-end">
           <%= f.submit "メッセージを送る", class: "message_link" %>
+           </p>
         <% end %>
        <% end %>
        </div>

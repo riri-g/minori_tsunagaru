@@ -88,4 +88,3 @@ end
 
  gem 'devise-i18n'
 
-gem 'compass-rails', '~> 3.1.0'

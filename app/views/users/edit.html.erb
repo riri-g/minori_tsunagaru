@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プロフィール編集</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
 <div class="cover-user-edit">
   <div class="container d-flex flex-column align-items-center">
     <div class="row mt-5">
@@ -10,13 +19,13 @@
         <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前", class: "form-control" %>
       </div>
       <div class="form-group">
-        <label class="form-label">プロフィール画像</label><br>
+        <label class="form-label">画像</label><br>
         <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.svg", class: "mb-3 profile-img" %><br>
          <%= f.file_field :profile_image %>
       </div>
       <div class="form-group">
-        <label class="form-label">プロフィール</label>
-        <%= f.text_field :profile, class: "form-control" %><br>
+        <label class="form-label">プロフィール文</label>
+        <%= f.text_area :profile, class: "form-control" %><br>
       </div>
       <%= f.submit '保存する', class: "btn btn-success" %>
       <% end %>

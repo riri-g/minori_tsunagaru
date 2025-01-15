@@ -1,3 +1,7 @@
+.body {
+  text-decoration: none;
+}
+
 .cover-user-show {
     height: 100%;
     width: 100%;
@@ -21,6 +25,7 @@
 
 .profile {
     padding: 15px;
+      text-decoration: none;
 }
 
 .index-left h2 {
@@ -36,3 +41,104 @@
     margin-right: 8px;
   }
  
+
+  
+  /* 名前と投稿数の間にスペース */
+  .caption.h4 {
+    margin-right: 30px; /* 名前と投稿数の間にスペースを調整 */
+    color: #555;
+  }
+  
+  .message_link {
+    display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: white;
+  background: rgb(86, 129, 126);
+  border: solid 2px rgb(86, 129, 126);
+  border-radius: 3px;
+  transition: .4s;
+  text-decoration: none;
+  }
+
+  .message_link:hover {
+    background: white;
+    color: rgb(86, 129, 126);
+  }
+
+  
+
+
+  /* フォーム全体のスタイル */
+.cover-user-edit {
+  padding: 50px 0; /* 上下の余白 */
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* フォームの各セクション */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.form-control:focus {
+  border-color: #455f62; /* フォーカス時の色 */
+  box-shadow: 0 0 5px #455f62;
+}
+
+/* 画像表示部分 */
+.profile-img {
+  border-radius: 50%;
+  border: 2px solid #ddd;
+}
+
+
+/* ファイル選択ボタン */
+input[type="file"] {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* ボタン */
+button.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button.btn:hover {
+  background-color: #218838;
+}
+
+ 
+
