@@ -1,8 +1,10 @@
+<meta name="viewport" content="width=device-width,initial-scale=1.0>
 <div class="cover-show">
   <div class="container d-flex flex-column align-items-center">
-    <div class="row mt-5 mb-5">
-      <h1 class="font-weight-normal mt-5 mb-5">投稿詳細</h1>
+    <div class="row mt-5">
+      <h1 class="font-weight-normal">投稿詳細</h1>
     </div>
+
     <% if @comment.errors.any? %>
     <div class="card text-center text-white bg-danger mt-3">
       <%= @comment.errors.count %>件のエラーが発生しました

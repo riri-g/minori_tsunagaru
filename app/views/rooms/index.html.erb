@@ -1,30 +1,28 @@
 <% @another_entries.each do |entry| %>
-  <%= link_to room_path(entry.room), style: "text-decoration: none;" do %>
-    <div class="card">
-      <div class="card-body">
-        <div>
-          <div class="d-flex">
-            <div class="chat-avatar">
-              <object>
+    <%= link_to room_path(entry.room), style: "text-decoration: none;" do %>
+      <div class="card">
+        <div class="card-body">
+          <div>
+            <div class="d-flex">
+              <div class="chat-avatar">
                 <%= link_to user_path(entry.user) do %>
                   <%= image_tag entry.user.icon, class: "message_icon_img me-3" %>
                 <% end %>
-              </object>
-            </div>
-            <div class="chat-user-name">
-              <span class="fw-bold me-2">
-                <%= entry.user.name %>
-              </span>
-              <span class="username">
-                @<%= entry.user.username %>
-              </span>
-            </div>
-            <div class="chat-text">
-              <%= entry.room.messages.last&.message %>
+              </div>
+              <div class="chat-user-name">
+                <span class="fw-bold me-2">
+                  <%= entry.user.name %>
+                </span>
+                <span class="username">
+                  @<%= entry.user.username %>
+                </span>
+                <div class="chat-text">
+                  <%= entry.room.messages.last&.message %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>

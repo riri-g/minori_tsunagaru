@@ -18,15 +18,25 @@ class UsersController < ApplicationController
     
     @following_users = @user.following_user
     @follower_users = @user.follower_user
-  
-    if @user != current_user
-      @room = current_user.rooms.joins(:entries).find_by(entries: { user_id: @user.id })
-      unless @room
+   
+    @currentUserEntry = Entry.where(user_id: current_user.id)
+    @userEntry = Entry.where(user_id: @user.id)
+    unless @user.id == current_user.id
+      @currentUserEntry.each do |cu| 
+        @userEntry.each do |u| 
+          if cu.room_id == u.room_id 
+            @isRoom = true
+            @roomId = cu.room_id
+          end
+        end
+      end
+      if @isRoom
+      else
         @room = Room.new
         @entry = Entry.new
       end
+     end
     end
-  end
 
   def edit
     @user = User.find(params[:id])
@@ -49,10 +59,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @room = Room.create
-    @current_entry = @room.entries.create(user_id: current_user.id)
-    @another_entry = @room.entries.create(user_id: params[:entry][:user_id])
-    redirect_to room_path(@room)
+    
   end
   
   private

@@ -42,3 +42,19 @@
     background: #ECECEC;
     color: #00BCD4;
   }
+
+  @media screen and (max-width: 575px) { 
+    .title {
+        font-size: 3.5rem;
+        padding: 0 10px;
+    }
+
+    .sub-title {
+      font-size: 25px;
+    }
+
+  
+
+
+   
+ }

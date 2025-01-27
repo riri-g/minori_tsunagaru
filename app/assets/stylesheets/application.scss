@@ -16,73 +16,217 @@
 
  @import "bootstrap";
  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+ 
+ 
  body {
   font-family: 'Noto Sans JP', sans-serif; /* お好みのフォントを指定 */
-  background-color: rgba(232, 236, 229, 0.4);
-  text-decoration: none;
+  background-color: rgba(232, 236, 229, 0.4);  
 }
 
- html,
- body {
-   width: 100%;
-   height: 100%;
-   margin: 0;
-   padding: 0;
- }
- 
- .profiler-results {
-   display: none;
- }
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 横方向の余白を隠す */
+}
 
- .logo-image {
-  height: 80px; /* ロゴの高さ */
+ .header {
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgb(86, 129, 126);
+  font-family: 'Sawarabi Mincho', sans-serif;
+  font-size: 20px;
+  justify-content: space-between;
+  max-width: 100%;
+  overflow: hidden; /* 内容がはみ出さないようにする */
+}
+
+.container, .cover  {
+  width: 100%;
+  padding: 0;
+  margin: 0
+}
+
+
+.header__inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  overflow: hidden; /* 内容がはみ出さないようにする */
+}
+
+.header__logo img {
+  height: 100px; /* ロゴの高さ */
   width: auto; /* アスペクト比を維持 */
   object-fit: contain; /* 画像を枠内に収める */
 }
 
-.nav-link {
-  text-decoration: none; /* デフォルトのリンク装飾を無効化 */
+/* パソコンサイズ用のCSS  */
+@media screen and (min-width:768px) {
+  .header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+.container, .cover  {
+  width: 100%;
+  padding: 0;
+  margin: 0
 }
-
-
-  .profile-img {
-    border-radius: 50%;
+  
+  .header__inner {
+    width: 100%;
+    padding: 20px;
+    
   }
 
-  
-header {
-  display: flex;
-  background-color: rgb(86, 129, 126);
-  font-family: 'Sawarabi Mincho', sans-serif;
-  font-size: 20px;
+  .header__logo {
+    width: 160px;
+    transition: opacity .2s ease;
 }
 
-header div:first-child {
+  .header__logo:hover {
+  opacity: .7;
+}
+
+ .menu__list {
+  display: flex;
+  font-size: 25px;
+}
+
+ .menu__item:first-child {
   margin-right: auto;
-  font-size: 25px;
-  
+ }
+    .menu__link {
+        position: relative;
+        margin-left: 30px;
+        padding: 10px 0;
+        align-items: center;
+        display: flex;
+      }
+
+    .menu__link:last-child {
+      margin-right: 30px;
+    }
+    
+    .menu__item {
+      list-style: none; /* デフォルトのリンク装飾を無効化 */
+      margin: 0 20px;
+  }
+
+    .menu__item:hover {
+        color: rgb(65, 100, 100);
+    }
+    
+    .header__menu-btn {
+        display: none;
+    }
+
 }
 
-header div:last-child {
-  margin-right: 30px;
-}
-
-header div {
-  margin-left: 30px;
-  padding: 5px 0;
-  align-items: center;
-  display: flex;
-}
-
-a:hover {
-  color: rgb(32, 51, 51)!important;
-}
-
-#head-top {
-  text-decoration: none;
-  font-size: 25px;
-}
-
-.nav-link {
-  text-decoration: none;
+/* スマートフォン、タブレットサイズ用のCSS */
+@media screen and (max-width:767px) {
+  .container {
+      overflow: hidden;
+  }
+  .header {
+      width: 100%; 
+      position: fixed;
+      background: rgb(86, 129, 126);
+      
+      
+  }
+  .header__inner {
+      position: relative;
+      z-index: 10;
+  }
+  .header__logo {
+      margin-left: 10px;
+      height: 80px; /* ロゴの高さ */
+      width: auto; /* アスペクト比を維持 */
+      object-fit: contain; /* 画像を枠内に収める */
+      
+  }
+  .header__menu {
+      position: fixed;
+      z-index: 5;
+      top: 80px;
+      width: 100%;
+      height: calc(100vh - 50px);
+      background: rgb(243, 246, 245);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s ease;
+      height: auto; /* 高さを自動調整 */
+      padding: 10px 0; /* 上下の余白を追加（調整可能） */
+  }
+  .header__inner.active .header__menu {
+      opacity: 1;
+      visibility: visible
+  }
+  .menu__list {
+      border-top: 1px solid #d7d7d7;
+  }
+  .menu__item {
+      border-bottom: 1px solid #d7d7d7;
+      list-style: none;
+  }
+  .menu__link {
+      display: block;
+      padding: 13px 10px;
+      color:  #d7d7d7;
+  }
+  .header__menu-btn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      cursor: pointer;
+  }
+  .header__menu-btn span:nth-child(-n+3) {
+      position: absolute;
+      display: block;
+      width: 30px;
+      height: 2px;
+      background:  #d7d7d7;
+  }
+  .header__menu-btn span:nth-child(1) {
+      top: 10px;
+      transition: all .2s ease;
+  }
+  .header__inner.active .header__menu-btn span:nth-child(1) {
+      top: 20px;
+      transform: rotate(45deg);
+  }
+  .header__menu-btn span:nth-child(2) {
+      top: 18px;
+      transition: opacity .2s ease;
+  }
+  .header__inner.active .header__menu-btn span:nth-child(2) {
+      opacity: 0;
+  }
+  .header__menu-btn span:nth-child(3) {
+      top: 26px;
+      transition: all .2s ease;
+  }
+  .header__inner.active .header__menu-btn span:nth-child(3) {
+      top: 20px;
+      transform: rotate(-45deg);
+  }
+  .header__menu-btn span:nth-child(4) {
+      font-size: 10px;
+      color:  #d7d7d7;
+  }
 }

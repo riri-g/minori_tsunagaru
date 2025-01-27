@@ -66,6 +66,7 @@
   margin: 0 auto;
 }
 
+
 .search-form-4 {
   display: flex;
   flex-direction: column;
@@ -81,7 +82,7 @@
 }
 
 .search-form-4 .form-control {
-  width: 50%;
+  width: 80%;
   padding: 10px;
 }
 
@@ -114,9 +115,31 @@ a {
 
 h1{
   color: rgb(86, 129, 126);/*文字色*/
-  font-weight: bold;
   padding: 0.5em 0;/*上下の余白*/
   border-top: solid 3px rgb(86, 129, 126);/*上線*/
   border-bottom: solid 3px rgb(86, 129, 126);/*下線*/
   font-weight: bold; /* 太文字 */
 }
+
+
+
+ 
+@media screen and (max-width: 575px) {
+  img {
+    max-width: 100%;
+    height: auto;
+}
+.font-weight-normal {
+  position: relative; /* 他の要素と独立させる */
+  z-index: 5; /* 必要に応じて優先順位を変更 */
+  margin-top: 80px !important; /* 上部に余白を確保 */
+
+}
+.comments {
+  margin-left: 1rem; /* スマホで左の余白を減らす */
+  margin-right: 1rem; /* スマホで上の余白を大幅に増やす */
+  width: 50%;        /* スマホ画面に合わせて幅を調整 */
+}
+
+}
+

@@ -3,9 +3,9 @@
 one:
   user: one
   room: one
-  message: MyText
+  content: MyText
 
 two:
   user: two
   room: two
-  message: MyText
+  content: MyText

@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
   def index
     # 公開された投稿またはログインユーザーの投稿を取得
-    @posts = Post.where("status = ? OR user_id = ?", Post.statuses[:published], current_user.id)
+    @posts = Post.published
   
     # カテゴリーリストを取得
     @categories = Category.all

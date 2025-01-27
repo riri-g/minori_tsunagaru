@@ -3,15 +3,17 @@ Rails.application.routes.draw do
   get 'categories/edit'
   resources :categories, except: [:new, :show]
   resources :messages, only: [:create]
-  resources :rooms, only: [:create, :index, :show]
+  resources :rooms, only: [:create, :show]
 
   devise_for :users
+
   resources :users, only:[:index, :show, :edit, :update] do
     member do
       get :follows, :followers
     end
     resource :relationships, only: [:create, :destroy]
   end
+
   resources :posts do
     resources :comments, only:[:create, :destroy]
     resource :favorites, only:[:create, :destroy]
