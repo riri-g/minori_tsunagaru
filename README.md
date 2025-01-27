@@ -31,8 +31,8 @@
 
 # 利用方法
 ・ユーザー新規登録を行う、またはログインする　
-![スクリーンショット 2025-01-24 201324](https://github.com/user-attachments/assets/e52b3b6f-446e-41a9-814d-0fda2dfa95e5)
-![スクリーンショット 2025-01-24 201335](https://github.com/user-attachments/assets/37bcebb2-44de-4a1a-adee-433996ff3318)
+[スクリーンショット 2025-01-24 201324](https://github.com/user-attachments/assets/e52b3b6f-446e-41a9-814d-0fda2dfa95e5)
+[スクリーンショット 2025-01-24 201335](https://github.com/user-attachments/assets/37bcebb2-44de-4a1a-adee-433996ff3318)
 
 ・行った場所を写真や感想とともに投稿
 
