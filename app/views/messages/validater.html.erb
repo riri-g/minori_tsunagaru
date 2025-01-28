@@ -1,8 +1,8 @@
 <% if @message.errors.any? %>
-<div class="card text-center text-white bg-danger mb-3">
+ <div class="card text-center text-white bg-danger mb-3">
   <%= @message.errors.count %>件のエラーが発生しました
   <% @message.errors.full_messages.each do |message| %>
-    <%= message %>
+  <%= message %>
   <% end %>
-  </div>
- <% end %>
+ </div>
+<% end %>

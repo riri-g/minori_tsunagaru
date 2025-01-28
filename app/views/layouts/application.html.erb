@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>みのりつながる</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag('favicon.ico') %>
   </head>
 
   <body>
-    <% if user_signed_in? %> 
-     <div class="container">
-      <header class="header">  
-      <div id="headerInner" class="header__inner">
-       <div class="header__logo">
-        <%= link_to root_path do %>
-        <%= image_tag "top_background.png", alt: "つながるみのり", class: "logo-image" %>
-       <% end %>
-      </div>
+    <% if user_signed_in? %>
+      <header class="header">
+        <div id="headerInner" class="header__inner">
+          <!-- ロゴ部分 -->
+          <div class="header__logo">
+            <%= link_to root_path do %>
+              <%= image_tag "top_background.png", alt: "つながるみのり", class: "logo-image" %>
+            <% end %>
+          </div>
 
+          <!-- ハンバーガーメニュー -->
+          <div class="header__menu-btn" id="spMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
 
-
-      <div class="header__menu-btn" id="spMenuBtn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <div class="header__menu">
-       <ul class="menu__list">
-        <li class="menu__item">
-          <%= link_to "ユーザ一覧", users_path, class: "nav-link" %>
-         </li>
-         <li class="menu__item">
-          <%= link_to "投稿一覧", posts_path, class: "nav-link" %>
-         </li>
-         <li class="menu__item">
-         <%= link_to "投稿する", new_post_path, class: "nav-link" %>
-         </li>
-         <li class="menu__item">
-         <%= link_to "下書き一覧", confirm_posts_path, class: "nav-link" %>
-         </li>
-         <li class="menu__item">
-         <%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %>
-         </li>
-         <li class="menu__item">
-         <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
-         </li>
-      </ul>
-  </div>
-  </div>
-  </header>
- </div>
+          <!-- メニューバー -->
+          <div class="header__menu">
+            <ul class="menu__list">
+              <li class="menu__item"><%= link_to "ユーザ一覧", users_path, class: "nav-link" %></li>
+              <li class="menu__item"><%= link_to "投稿一覧", posts_path, class: "nav-link" %></li>
+              <li class="menu__item"><%= link_to "投稿する", new_post_path, class: "nav-link" %></li>
+              <li class="menu__item"><%= link_to "下書き一覧", confirm_posts_path, class: "nav-link" %></li>
+              <li class="menu__item"><%= link_to "マイページ", user_path(current_user.id), class: "nav-link" %></li>
+              <li class="menu__item">
+                <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "nav-link" %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    <% else %>
+      <!-- ログインしていない場合のヘッダー -->
+      <header class="header">
+        <div class="header__inner">
+          <div class="header__logo">
+            <%= link_to root_path do %>
+              <%= image_tag "top_background.png", alt: "つながるみのり", class: "logo-image" %>
+            <% end %>
+          </div>
+          <nav class="header__menu">
+            <ul class="menu__list">
+              <li class="menu__item"><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
+              <li class="menu__item"><%= link_to "新規登録", new_user_registration_path, class: "nav-link" %></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
     <% end %>
+
+    <!-- メインコンテンツ -->
     <%= yield %>
   </body>
 </html>

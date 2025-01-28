@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0>
 <div class="cover-show">
-  <div class="container d-flex flex-column align-items-center">
+  <div class="container-fluid d-flex flex-column align-items-center">
     <div class="row mt-5">
       <h1 class="font-weight-normal">投稿詳細</h1>
     </div>
@@ -13,7 +13,7 @@
       <% end %>
     </div>
     <% end %>
-    <div class="container d-flex mt-5">
+    <div class="container-fluid d-flex mt-5">
       <div class="d-block">
         <p class="caption"><%= @post.user.name %></p>
         <%= attachment_image_tag @post, :image, format: 'jpeg', size: "350x350" %><br>
