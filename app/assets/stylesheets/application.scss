@@ -16,12 +16,13 @@
 
  @import "bootstrap";
  @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
- 
+ @import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Shippori+Mincho&display=swap');
  
  body {
-  font-family: 'Noto Sans JP', sans-serif; /* お好みのフォントを指定 */
+  font-family: 'Kaisei Opti', serif; /* お好みのフォントを指定 */
   background-color: rgba(232, 236, 229, 0.4);  
 }
+
 
 html,
 body {
@@ -32,6 +33,8 @@ body {
   overflow-x: hidden; /* 横方向の余白を隠す */
 }
 
+
+
  .header {
   display: flex;
   top: 0;
@@ -39,11 +42,12 @@ body {
   z-index: 1000;
   width: 100%;
   background-color: rgb(86, 129, 126);
-  font-family: 'Sawarabi Mincho', sans-serif;
-  font-size: 20px;
+  font-family: 'Kaisei Opti', serif;
+  color: white;
   justify-content: space-between;
   max-width: 100%;
-  overflow: hidden; /* 内容がはみ出さないようにする */
+  flex-wrap: wrap;/* 内容がはみ出さないようにする */
+  min-height: 100px;
 }
 
 .container, .cover  {
@@ -59,82 +63,56 @@ body {
   justify-content: space-between;
   align-items: center;
   max-width: 100%;
-  overflow: hidden; /* 内容がはみ出さないようにする */
+  flex-wrap: wrap; /* 内容がはみ出さないようにする */
 }
 
 .header__logo img {
-  height: 100px; /* ロゴの高さ */
+  max-height: 80px;
+  min-height: 60px;
   width: auto; /* アスペクト比を維持 */
   object-fit: contain; /* 画像を枠内に収める */
 }
+ 
+.menu__list {
+  font-size: 1.5rem;
+  flex-wrap: nowrap;
+}
 
 /* パソコンサイズ用のCSS  */
-@media screen and (min-width:768px) {
-  .header {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-  
-.container, .cover  {
-  width: 100%;
-  padding: 0;
-  margin: 0
-}
-  
-  .header__inner {
-    width: 100%;
-    padding: 20px;
-    
-  }
-
-  .header__logo {
-    width: 160px;
-    transition: opacity .2s ease;
-}
-
-  .header__logo:hover {
-  opacity: .7;
-}
-
+@media screen and (min-width:1044px) {
  .menu__list {
-  display: flex;
-  font-size: 25px;
-}
-
- .menu__item:first-child {
-  margin-right: auto;
- }
-    .menu__link {
-        position: relative;
-        margin-left: 30px;
-        padding: 10px 0;
-        align-items: center;
-        display: flex;
-      }
-
-    .menu__link:last-child {
-      margin-right: 30px;
-    }
-    
-    .menu__item {
-      list-style: none; /* デフォルトのリンク装飾を無効化 */
-      margin: 0 20px;
+   display: flex;
+   font-size: 1.5rem
+  }
+ .menu__link {
+   position: relative;
+   margin-left: 30px;
+   padding: 10px 0;
+   align-items: center;
+   display: flex;
   }
 
-    .menu__item:hover {
-        color: rgb(65, 100, 100);
-    }
+  .menu__link:last-child {
+    margin-right: 30px;
+  }
     
-    .header__menu-btn {
-        display: none;
-    }
+  .menu__item {
+    list-style: none; /* デフォルトのリンク装飾を無効化 */
+    margin: 0 20px;
+  }
+
+  .menu__item:hover {
+    color: rgb(65, 100, 100);
+  }
+    
+  .header__menu-btn {
+     display: none;
+  }
 
 }
 
 /* スマートフォン、タブレットサイズ用のCSS */
-@media screen and (max-width:767px) {
+@media screen and (max-width:1043px) {
   .container {
       overflow: hidden;
   }
@@ -142,8 +120,7 @@ body {
       width: 100%; 
       position: fixed;
       background: rgb(86, 129, 126);
-      
-      
+      height: 100px;
   }
   .header__inner {
       position: relative;
@@ -151,10 +128,13 @@ body {
   }
   .header__logo {
       margin-left: 10px;
-      height: 80px; /* ロゴの高さ */
+      height: auto; /* ロゴの高さ */
       width: auto; /* アスペクト比を維持 */
-      object-fit: contain; /* 画像を枠内に収める */
-      
+      object-fit: contain; /* 画像を枠内に収める */  
+  }
+  .header__logo img {
+    width: 100%; /* アスペクト比を維持 */
+    max-width: 100%; /* 親要素を超えないように */
   }
   .header__menu {
       position: fixed;
@@ -162,7 +142,7 @@ body {
       top: 80px;
       width: 100%;
       height: calc(100vh - 50px);
-      background: rgb(243, 246, 245);
+      background: rgb(86, 129, 126);
       opacity: 0;
       visibility: hidden;
       transition: opacity .2s ease;
@@ -175,10 +155,16 @@ body {
   }
   .menu__list {
       border-top: 1px solid #d7d7d7;
+      width: 90%; /* ボーダーの幅を80%に制限 */
+      margin: 0 auto; /* 左右中央揃え */
+      font-size: 1.5rem
   }
   .menu__item {
       border-bottom: 1px solid #d7d7d7;
       list-style: none;
+      width: 100%; /* メニュー項目の幅も同様に調整 */
+      margin: 0 auto; /* 左右中央揃え */
+      padding: 5px 0; /* 適度な上下の余白 */
   }
   .menu__link {
       display: block;
@@ -230,3 +216,9 @@ body {
       color:  #d7d7d7;
   }
 }
+
+@media screen and (max-width: 768px) {
+    .menu__list {
+        font-size: 1rem;
+    }
+  }

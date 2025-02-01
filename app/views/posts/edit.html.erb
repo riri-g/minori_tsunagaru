@@ -1,4 +1,5 @@
 <div class="cover-new">
+ <meta name="viewport" content="width=device-width,initial-scale=1">
   <div class="container-fluid d-flex flex-column align-items-center">
     <div class="row mt-5">
       <h1 class="font-weight-normal">編集する</h1>
@@ -45,7 +46,7 @@
           <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"), k] }, {}, class: "custom-select w-25 mb-3" %>
         </div>
         
-        <%= f.submit '保存する', class: "btn btn-success" %>
+        <%= f.submit '保存する', class: "btn-success" %>
         <%= link_to '投稿詳細ページへ', post_path(@post), class: "btn btn-dark mt-3" %>
       <% end %>
     </div>

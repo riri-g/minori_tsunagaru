@@ -1,9 +1,11 @@
 <div class="cover-index">
+<meta name="viewport" content="width=device-width,initial-scale=1">
   <div class="container-fluid d-flex flex-column align-items-center">
     <div class="row mt-5">
       <h1 class="font-weight-normal">下書き一覧</h1>
     </div>
     <%= render 'index', posts: @posts %>
-    <%= link_to 'マイページへ', user_path(current_user), class: "btn btn-primary" %>
+    <%= link_to 'マイページへ', user_path(current_user), class: "btn-primary" %>
   </div>
 </div>
+

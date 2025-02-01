@@ -1,4 +1,5 @@
 <div class="cover-user-show">
+<meta name="viewport" content="width=device-width,initial-scale=1">
   <div class="container-fluid d-flex flex-column align-items-center">
     <div class="row mt-5">
       <% if user_signed_in? && @user == current_user %>
@@ -30,13 +31,13 @@
       <% if @user != current_user %>
         <% if (current_user.following?(@user)) && (@user.following?(current_user)) %>
           <% if @isRoom == true %>
-            <%= link_to "チャットへ", room_path(@roomId), class: "btn btn-primary" %>
+            <%= link_to "チャットへ", room_path(@roomId), class: "btn-primary" %>
           <% else %>
             <%= form_for @room do |f| %>
               <%= fields_for @entry do |e| %>
                 <%= e.hidden_field :user_id, value: @user.id %>
               <% end %>
-              <%= f.submit "チャットを始める", class: "btn btn-primary user-show-chat" %>
+              <%= f.submit "チャットを始める", class: "btn-primary user-show-chat" %>
             <% end %>
           <% end %>
         <% end %>
@@ -83,7 +84,7 @@
               <p><%= post.text %></p>
               <%= attachment_image_tag post, :image, format: 'jpeg', size: '200x133' %>
               <p><span class="badge badge-secondary">下書き</span></p>
-              <%= link_to '編集する', edit_post_path(post), class: 'btn btn-warning' %>
+              <%= link_to '編集する', edit_post_path(post), class: 'btn-warning' %>
             </div>
           <% end %>
           <%= paginate @draft_posts %>

@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
-.cover-new h1 {
-  font-family: 'Noto Sans JP', sans-serif;
-}
-.cover-new .form-label {
-  font-family: 'Noto Sans JP', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Shippori+Mincho&display=swap');
+
 
 .cover-new {
   height: 100%;
@@ -15,7 +11,6 @@
 
 .form-label {
   font-size: 20px;
-  
 }
 
 .form-group {
@@ -55,7 +50,7 @@
 }
 
 .index-left {
-  margin-left: 2.5rem!important;
+  margin-left: 2.5rem;
 }
 
 .center-form {
@@ -77,12 +72,12 @@
 }
 
 .search-form-4 .form-group {
-  width: 50%;
+  width: 100%;
   margin-bottom: 15px;
 }
 
 .search-form-4 .form-control {
-  width: 80%;
+  width: 100%;
   padding: 10px;
 }
 
@@ -96,14 +91,6 @@
   width: 100%;
   background-blend-mode: lighten;
   background-size: 100% 100%;
-}
-
-#text {
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
 }
 
 .comments {
@@ -121,25 +108,147 @@ h1{
   font-weight: bold; /* 太文字 */
 }
 
-
-
- 
-@media screen and (max-width: 575px) {
-  img {
-    max-width: 100%;
-    height: auto;
+.btn-primary {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: white;
+  background: rgb(98, 103, 127);
+  border: solid 2px rgb(98, 103, 127);
+  border-radius: 3px;
+  transition: .4s;
 }
+
+.btn-primary:hover {
+  background: white;
+  color: rgb(98, 103, 127);
+}
+
+
+.container-fluid d-flex mt-5{
+  display: flex;
+  justify-content: center; /* 水平方向の中央揃え */
+  align-items: flex-start;; /* 垂直方向の中央揃え */
+  margin-left: 0;
+  margin-right: 0;/* 縦方向の中央揃え */
+}
+
+
+.row mt-5 {
+  display: flex;
+  flex-wrap: wrap; /* 横幅が足りない場合、折り返し */
+  justify-content: center; /* 水平方向の中央揃え */
+  align-items: flex-start;; /* 垂直方向の中央揃え */
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.one-post {
+  display: flex;
+  justify-content: center; /* コンテンツを中央に配置 */
+  align-items: center; /* コンテンツを縦にも中央に配置 */
+  margin-bottom: 4rem; /* 少し下の余白 */
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* 水平中央揃え */
+}
+
+.btn-success{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: white;
+  background: rgb(98, 103, 127);
+  border: solid 2px rgb(98, 103, 127);
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-success:hover {
+  background: white;
+  color: rgb(98, 103, 127);
+}
+
+.image-container {
+  margin-right: 50px; /* 画像と詳細の間隔 */
+}
+
+
+@media screen and (max-width:1043px) {
+
+  .one-post {
+    width: calc(100% / 3 - 10px); /* 3列に並べる */
+    margin: 3px; /* 少し余白をつける */
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+  }
+
+  .post.image {
+    width: 70%;
+    height: auto;
+  }
+
+  .font-weight-normal {
+    position: relative; /* 他の要素と独立させる */
+    z-index: 5; /* 必要に応じて優先順位を変更 */
+    margin-top: 100px !important; /* 上部に余白を確保 */
+  
+  }
+
+  .search-form-4 .form-group {
+    width: 70%;
+    margin-bottom: 4px;
+  }
+  
+  .search-form-4 .form-control {
+    width: 70%;
+    padding: 7px;
+  }
+
+  .image-container {
+    margin-right: 0px; /* 画像と詳細の間隔 */
+    width: 70%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .one-post {
+    width: calc(100% / 3 - 10px); /* 3列に並べる */
+    margin: 1px; /* 少し余白をつける */
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+  }
+
+  .attachment.post.image {
+    width: 60%;
+    height: auto;
+  }
+
+.comments {
+  margin-left: 1rem; /* スマホで左の余白を減らす */
+  margin-right: 1rem; /* スマホで上の余白を大幅に増やす */
+  width: 100%;        /* スマホ画面に合わせて幅を調整 */
+}
+
 .font-weight-normal {
   position: relative; /* 他の要素と独立させる */
   z-index: 5; /* 必要に応じて優先順位を変更 */
   margin-top: 80px !important; /* 上部に余白を確保 */
 
 }
-.comments {
-  margin-left: 1rem; /* スマホで左の余白を減らす */
-  margin-right: 1rem; /* スマホで上の余白を大幅に増やす */
-  width: 50%;        /* スマホ画面に合わせて幅を調整 */
-}
 
+.image-container {
+  margin-right: 0px; /* 画像と詳細の間隔 */
+  width: 50%;
+}
 }
 
