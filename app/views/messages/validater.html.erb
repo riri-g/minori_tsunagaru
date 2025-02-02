@@ -1,8 +1,10 @@
 <% if @message.errors.any? %>
- <div class="card text-center text-white bg-danger mb-3">
-  <%= @message.errors.count %>件のエラーが発生しました
-  <% @message.errors.full_messages.each do |message| %>
-  <%= message %>
-  <% end %>
-</div>
- <% end %>
+  <div id="error_explanation">
+    <h3><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h3>
+    <ul>
+      <% @message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -9,15 +9,8 @@
   background-size: 100% 100%;
 }
 
-.form-label {
-  font-size: 20px;
-}
 
-.form-group {
-  width: 600px;
-}
-
-.btn-flat-border {
+.btn.btn-flat-border {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
@@ -27,7 +20,7 @@
   transition: .4s;
 }
 
-.btn-flat-border:hover {
+.btn.btn-flat-border:hover {
   background: rgb(86, 129, 126);
   color: white;
 }
@@ -45,7 +38,7 @@
 
 .caption {
   color: black;
-  font-size: 100%;
+  font-size: 1.5rem;
   text-decoration: none;
 }
 
@@ -55,8 +48,8 @@
 
 .center-form {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center;  /* 水平方向の中央揃え */
+  align-items: center;      /* 垂直方向の中央揃え */           /* 親要素の高さを画面全体の高さに設定 */
   width: 100%;
   margin: 0 auto;
 }
@@ -67,18 +60,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 500px; /* フォームの最大幅を設定 */
 }
 
-.search-form-4 .form-group {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.search-form-4 .form-control {
-  width: 100%;
+  
+.search-form-4 .form-group{
+  width: 60%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 400px; /* 最大幅を500pxに設定 */
   padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;  /* paddingを幅に含める */
+  font-size: 1.5rem;
 }
 
 .search-form-4 .btn {
@@ -108,7 +103,7 @@ h1{
   font-weight: bold; /* 太文字 */
 }
 
-.btn-primary {
+.btn.btn-primary {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
@@ -119,7 +114,7 @@ h1{
   transition: .4s;
 }
 
-.btn-primary:hover {
+.btn.btn-primary:hover {
   background: white;
   color: rgb(98, 103, 127);
 }
@@ -127,18 +122,19 @@ h1{
 
 .container-fluid d-flex mt-5{
   display: flex;
+  width: 100vw; 
   justify-content: center; /* 水平方向の中央揃え */
-  align-items: flex-start;; /* 垂直方向の中央揃え */
-  margin-left: 0;
-  margin-right: 0;/* 縦方向の中央揃え */
+  align-items: flex-start; /* 垂直方向の中央揃え */
+  margin: 0;
 }
 
 
 .row mt-5 {
+  width: 100%;
   display: flex;
   flex-wrap: wrap; /* 横幅が足りない場合、折り返し */
   justify-content: center; /* 水平方向の中央揃え */
-  align-items: flex-start;; /* 垂直方向の中央揃え */
+  align-items: flex-start; /* 垂直方向の中央揃え */
   margin-left: 0;
   margin-right: 0;
 }
@@ -152,6 +148,12 @@ h1{
   text-align: center;
 }
 
+.post.image {
+  width: 300px;   /* 幅を200pxに設定 */
+  height: 300px;  /* 高さを200pxに設定 */
+}
+
+
 .pagination {
   display: flex;
   justify-content: center;
@@ -159,7 +161,7 @@ h1{
   margin: 0 auto; /* 水平中央揃え */
 }
 
-.btn-success{
+.btn.btn-success{
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
@@ -170,13 +172,42 @@ h1{
   transition: .4s;
 }
 
-.btn-success:hover {
+.btn.btn-success:hover {
   background: white;
   color: rgb(98, 103, 127);
+} 
+
+.btn {
+  font-size: 1.5rem;
 }
 
-.image-container {
-  margin-right: 50px; /* 画像と詳細の間隔 */
+.form-group .btn {
+  height: 40px; /* ボタンの最小高さを指定 */
+  padding: 10px 20px; /* 内側の余白を適切に調整 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.comments h2 {
+  font-size: 3rem;
+}
+
+.comments p,a{
+  font-size: 1.5rem;
+}
+.comments-index{
+  font-size: 1.5rem;
+}
+
+.form-group{
+  width: 100%;
+
+}
+
+.container-fluid .form-label {
+  font-size: 2rem;
 }
 
 
@@ -187,9 +218,12 @@ h1{
     margin: 3px; /* 少し余白をつける */
     display: flex;
     flex-direction: column;
-    font-size: 1.25rem;
   }
 
+  .caption {
+
+    font-size: 1.25rem;
+  }
   .post.image {
     width: 70%;
     height: auto;
@@ -203,19 +237,54 @@ h1{
   }
 
   .search-form-4 .form-group {
-    width: 70%;
+    width: 50%;
     margin-bottom: 4px;
+    padding: 7px;
+    font-size: 1rem;
   }
   
-  .search-form-4 .form-control {
-    width: 70%;
-    padding: 7px;
-  }
+
 
   .image-container {
     margin-right: 0px; /* 画像と詳細の間隔 */
     width: 70%;
   }
+
+  .comments h2 {
+    font-size: 2rem;
+  }
+  
+  .comments p,a{
+    font-size: 1rem;
+  }
+  .comments-index{
+    font-size: 1rem;
+  }
+
+  .form-group {
+    width: 100%;
+    padding: 0 1rem;
+ 
+  }
+  
+  .form-control, .form-control-file, .custom-select {
+    width: 100%;
+  }
+  
+
+
+  .container-fluid .form-label {
+    font-size: 1.5rem;
+  }
+
+  .form-group .btn {
+    height: 50%
+  }
+
+  .btn {
+    font-size: 0.7rem;
+  }
+  
 }
 
 
@@ -249,6 +318,35 @@ h1{
 .image-container {
   margin-right: 0px; /* 画像と詳細の間隔 */
   width: 50%;
+}
+
+.comments h2 {
+  font-size: 1.5rem;
+}
+
+.comments p,a,a.btn{
+  font-size: 0.7rem;
+}
+.comments-index{
+  font-size: 0.7rem;
+}
+
+.search-form-4 .form-group {
+  width: 50%;
+  margin-bottom: 2px;
+  padding: 3px;
+  font-size: 1rem;
+}
+
+
+.form-control, .form-control-file, .custom-select {
+  width: 100%;
+}
+
+
+
+.container-fluid .form-label {
+  font-size: 1rem;
 }
 }
 

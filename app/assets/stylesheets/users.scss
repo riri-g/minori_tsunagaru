@@ -1,5 +1,39 @@
-.body {
-  text-decoration: none;
+.one-post.card {
+  display: flex;
+  align-items: flex-start; /* 垂直方向に左揃え */
+  justify-content: flex-start; /* 水平方向に左揃え */
+  height: 100%;
+  width: 100%;
+  padding-left: 40px; /* 全体的に左側の余白を追加 */
+  margin-bottom: 20px;
+  
+}
+
+ /* 名前と投稿数の間にスペース */
+ .caption.h4 {
+  margin-right: 30px; /* 名前と投稿数の間にスペースを調整 */
+  font-size: 1.5rem;
+  color: black;
+}
+
+
+.profile-img {
+  width: 100px; /* 画像の横幅を指定 */
+  height: 100px; /* 画像の縦幅を指定 */
+  border-radius: 50%; /* 画像を円形にする */
+}
+
+.profile {
+  flex: 1; /* テキスト部分が残りのスペースを占める */
+  margin-left: 15px; /* 画像とテキストの間に余白を追加 */
+  padding: 10px; /* テキスト周りに余白を追加 */
+  overflow: hidden; /* テキストがはみ出さないようにする */
+  white-space: nowrap; /* テキストが改行しないようにする */
+  text-overflow: ellipsis; /* 長いテキストの場合、省略記号を表示 */
+}
+ 
+.d-flex .h6 {
+  font-size: 2rem;
 }
 
 .cover-user-show {
@@ -42,14 +76,7 @@
   }
  
 
-  
-  /* 名前と投稿数の間にスペース */
-  .caption.h4 {
-    margin-right: 30px; /* 名前と投稿数の間にスペースを調整 */
-    color: #555;
-  }
-  
-  .message_link {
+ .message_link {
     display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
@@ -140,7 +167,42 @@ button.btn:hover {
   background-color: #218838;
 }
 
+
+@media screen and (max-width: 1043px) {
+
+  .one-post.card {
+    height: 100%;
+    width: 100%;
+    padding-left: 20px; /* 全体的に左側の余白を追加 */
+    margin-bottom: 10px;
+  }
+
+  
+  
+  .caption.h4 {
+    font-size: 1.25rem;
+    max-width: 100%; 
+    word-wrap: break-word;
+    white-space: normal;
+  }
+  .profile-img {
+    width: 50px; /* 幅を指定 */
+    height: 50px; /* 高さを指定 */
+    object-fit: cover; /* 画像が指定したサイズに収まるようにする */
+  }
+}
  
-@media screen and (max-width: 575px) {
-  h4: px;
+@media screen and (max-width: 768px) {
+
+  .one-post.card {
+    height: 70%;
+    width: 100%;
+    padding-left: 20px; /* 全体的に左側の余白を追加 */
+    margin-bottom: 10px;
+  }
+  
+  .caption.h4 {
+    font-size: 1rem;
+  }
+
 }

@@ -5,15 +5,16 @@
     
     <div class="form-group">
       <%= f.text_field :search, placeholder: "キーワードを入力", class: "form-control" %>
-    </div>
+    
     <br>
     <%= f.label :category_id, 'カテゴリー' %>
     <br>
     <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: '選択してください' }, class: 'form-control' %>
     <br>
     <!-- 検索ボタン -->
-    <%= f.submit '検索', class: "btn-flat-border" %>
-  <% end %>
+    <%= f.submit '検索', class: "btn btn-flat-border" %>
+    </div>
+   <% end %>
 </div>
 <div class="row mt-5">
  <% if @posts.any? %>

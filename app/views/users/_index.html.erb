@@ -4,7 +4,7 @@
 <div class="one-post card mt-3">
   <%= link_to user_path(user) do %>
   <div class="d-flex align-items-center">
-    <%= attachment_image_tag user, :profile_image, size: '50x50', fallback: "no_image.svg", class: "mt-3 profile-img" %>
+    <%= attachment_image_tag user, :profile_image, size: '80x80', fallback: "no_image.svg", class: "mt-3 profile-img" %>
     <p class="caption h4 mt-4 mr-2"><%= user.name %></p>
      <p class="caption h4 mt-4 mr-2"><%= "#{user.posts.count} 投稿" %></p>
   </div>

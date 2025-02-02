@@ -39,7 +39,7 @@
      <div class="form-group">
       <%= f.select :status, Post.statuses.keys.map { |k| [t("enums.post.status.#{k}"),k]}, {}, {class: "custom-select w-25 mb-3"} %>
      </div>
-     <%= f.submit '投稿する', class: "btn-flat-border" %>
+     <%= f.submit '投稿する', class: "btn btn-flat-border" %>
       
      <% end %>
 

@@ -4,12 +4,16 @@ class MessagesController < ApplicationController
   if Entry.where(user_id: current_user.id, room_id: params[:message][:room_id]).present?
     @message = Message.new(message_params)
     @message.user_id = current_user.id
-    @message.save
-  else
-    flash[:alert] = "メッセージ送信に失敗しました。"
+    if @message.save
+        # メッセージ送信成功時の処理
+      else
+        flash[:alert] = @message.errors.full_messages.to_sentence
+      end
+    else
+      flash[:alert] = "メッセージ送信に失敗しました。"
+    end
+    render :validater unless @message.save
   end
-  render :validater unless @message.save
-end
 
 private
 
