@@ -108,6 +108,10 @@ body {
   .header__menu-btn {
      display: none;
   }
+  
+  .header__inner.active {
+    display: block; /* メニューを表示する */
+  }
 
 }
 

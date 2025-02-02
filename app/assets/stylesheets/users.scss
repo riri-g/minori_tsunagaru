@@ -139,11 +139,17 @@ h1 {
 }
 
 /* 画像表示部分 */
-.profile-img {
+.d-flex .profile-img {
   border-radius: 50%;
+  width: 150px;              /* 幅を150pxに設定 */
+  height: 150px;             /* 高さを150pxに設定 */
   border: 2px solid #ddd;
 }
 
+.d-flex .profile {
+  width: 700px;
+  height: auto;
+}
 
 /* ファイル選択ボタン */
 input[type="file"] {
@@ -185,11 +191,16 @@ button.btn:hover {
     word-wrap: break-word;
     white-space: normal;
   }
-  .profile-img {
-    width: 50px; /* 幅を指定 */
-    height: 50px; /* 高さを指定 */
-    object-fit: cover; /* 画像が指定したサイズに収まるようにする */
-  }
+
+.d-flex .profile-img {
+  width: 100px;          
+  height: 100px;             
+}
+
+.d-flex .profile {
+  width: 400px;
+  height: auto;
+}
 }
  
 @media screen and (max-width: 768px) {
@@ -203,6 +214,16 @@ button.btn:hover {
   
   .caption.h4 {
     font-size: 1rem;
+  }
+
+  .d-flex .profile-img {
+    width: 70px;          
+    height: 70px;             
+  }
+  
+  .d-flex .profile {
+    width: 200px;
+    height: auto;
   }
 
 }
