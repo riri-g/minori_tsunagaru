@@ -15,17 +15,35 @@
   <div class="chat">
     <div class="chats">
       <% if @messages.present? %>
+        <% previous_date = nil %> <!-- 前回のメッセージの日付を保持 -->
         <% @messages.each do |m| %>
+          <% current_date = m.created_at.to_date %> <!-- 現在のメッセージの日付を取得 -->
+          
+          <!-- 同じ日付のメッセージがあれば日付は表示しない、違う日付のメッセージが来たら表示 -->
+          <% if current_date != previous_date %>
+            <div class="chat-date">
+              <strong><%= current_date.strftime("%Y-%m-%d") %></strong>
+            </div>
+          <% end %>
+
           <% if m.user_id == current_user.id %>
-               <div class="chat-fukidashi chat-self">
+            <div class="chat-fukidashi chat-self">
               <strong><%= m.content %></strong>
+              <div class="chat-time">
+                <%= m.created_at.strftime("%H:%M") %> <!-- 時間 -->
+              </div>
             </div>
           <% else %>
             <!-- 相手のメッセージ -->
             <div class="chat-fukidashi chat-other">
               <strong><%= m.content %></strong>
+              <div class="chat-time">
+                <%= m.created_at.strftime("%H:%M") %> <!-- 時間 -->
               </div>
+            </div>
           <% end %>
+
+          <% previous_date = current_date %> <!-- 前回の日付を更新 -->
         <% end %>
       <% end %>
     </div>

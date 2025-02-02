@@ -21,7 +21,7 @@
     background-image: url(top_background.png);
     background-color: rgb(86, 129, 126);
     background-blend-mode:lighten;
-    background-size: cover; /* 画面いっぱいに広げる */
+    background-size: 50%; /* 画面いっぱいに広げる */
     background-position: center center; /* 中央配置 */
     background-repeat: no-repeat; /* 繰り返しなし */
   }

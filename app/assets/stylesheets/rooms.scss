@@ -99,19 +99,24 @@
 }
 
 
+.card {
+  border: 1px solid #ddd; /* カードの枠線 */
+  border-radius: 8px; /* 角丸 */
+  background-color: #fff; /* 背景色 */
+
+}
+
+.d-flex.message {
+  display: flex;
+  align-items: center; /* 垂直方向に中央揃え */
+  gap: 10px; /* アバターとユーザー名の間の隙間 */
+}
+
   
-  .faceicon {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
-    border-radius: 50%;
-    overflow: hidden;
-  }
-  
-  .message_icon_img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .profile-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* アバター画像のアスペクト比を保つ */
   }
   
   

@@ -129,7 +129,7 @@ h1{
 }
 
 
-.row mt-5 {
+.row .mt-5 {
   width: 100%;
   display: flex;
   flex-wrap: wrap; /* 横幅が足りない場合、折り返し */
@@ -138,6 +138,9 @@ h1{
   margin-left: 0;
   margin-right: 0;
 }
+
+
+
 
 .one-post {
   display: flex;
@@ -191,7 +194,8 @@ h1{
 }
 
 .comments h2 {
-  font-size: 3rem;
+  font-size: 2rem;
+  width: 100%;
 }
 
 .comments p,a{
@@ -201,14 +205,19 @@ h1{
   font-size: 1.5rem;
 }
 
-.form-group{
-  width: 100%;
-
-}
 
 .container-fluid .form-label {
   font-size: 2rem;
 }
+
+.form-post {
+  width: 700px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 10px;
+}
+
 
 
 @media screen and (max-width:1043px) {
@@ -251,7 +260,7 @@ h1{
   }
 
   .comments h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   .comments p,a{
@@ -285,6 +294,13 @@ h1{
     font-size: 0.7rem;
   }
   
+
+  .form-control {
+    width: 100%; 
+    margin: 0 auto; 
+    padding-left: 40px; 
+  }
+
 }
 
 
@@ -321,7 +337,7 @@ h1{
 }
 
 .comments h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .comments p,a,a.btn{
@@ -348,5 +364,9 @@ h1{
 .container-fluid .form-label {
   font-size: 1rem;
 }
+
+  .row .form-post {
+    width: 100%
+  }
 }
 

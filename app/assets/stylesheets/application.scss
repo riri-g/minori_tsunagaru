@@ -67,23 +67,26 @@ body {
 }
 
 .header__logo img {
-  max-height: 80px;
-  min-height: 60px;
+  height: 80px;
   width: auto; /* アスペクト比を維持 */
   object-fit: contain; /* 画像を枠内に収める */
 }
  
+
 .menu__list {
   font-size: 1.5rem;
   flex-wrap: nowrap;
 }
 
+
 /* パソコンサイズ用のCSS  */
-@media screen and (min-width:1044px) {
- .menu__list {
-   display: flex;
-   font-size: 1.5rem
-  }
+@media screen and (min-width:1096px) {
+  .menu__list {
+    display: flex;
+    font-size: 1.5rem;
+   }
+ 
+
  .menu__link {
    position: relative;
    margin-left: 30px;
@@ -113,10 +116,13 @@ body {
     display: block; /* メニューを表示する */
   }
 
+
 }
 
 /* スマートフォン、タブレットサイズ用のCSS */
-@media screen and (max-width:1043px) {
+@media screen and (max-width:1096px) {
+
+  
   .container {
       overflow: hidden;
   }
@@ -170,6 +176,11 @@ body {
       margin: 0 auto; /* 左右中央揃え */
       padding: 5px 0; /* 適度な上下の余白 */
   }
+
+  .menu__item:last-child {
+    display: none ;
+  }
+
   .menu__link {
       display: block;
       padding: 13px 10px;

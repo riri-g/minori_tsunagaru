@@ -13,7 +13,7 @@ class RoomsController < ApplicationController
     @another_entries = Entry
                        .where(room_id: my_room_id)
                        .where.not(user_id: current_user.id)
-                       .preload(room: :messages).preload(user: { icon_attachment: :blob })
+                       .preload(room: :messages)
   end
 
   def show

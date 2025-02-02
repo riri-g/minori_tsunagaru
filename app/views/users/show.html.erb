@@ -11,8 +11,11 @@
 
     <% if user_signed_in? && @user == current_user %>
       <p class="d-flex align-self-end">
-        <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-success" %>
-      </p>
+        <%= link_to "プロフィール編集", edit_user_path(@user), class: "btn btn-success me-3" %>
+        <%= link_to rooms_path do %>
+         <%= image_tag "message-icon.png", alt: "メッセージ", class: "message-icon" %>
+        <% end %>
+     </p>
     <% end %>
 
     <% if current_user != @user %>

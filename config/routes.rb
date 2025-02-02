@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'categories/edit'
   resources :categories, except: [:new, :show]
   resources :messages, only: [:create]
-  resources :rooms, only: [:create, :show]
+  resources :rooms, only: [:create, :index, :show]
 
   devise_for :users
 
