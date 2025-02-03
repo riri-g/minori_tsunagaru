@@ -1,4 +1,4 @@
-# 繋がる実り
+# みのりつながる
 
 # 概要
 このアプリは、農産物直売所を共有できるSNSプラットフォームです。ユーザーは、マップから訪れた場所、感想、写真、そして星評価を投稿し、他の消費者と情報を交換することができます。
@@ -31,18 +31,24 @@
 
 # 利用方法
 ・ユーザー新規登録を行う、またはログインする　
-[スクリーンショット 2025-01-24 201324](https://github.com/user-attachments/assets/e52b3b6f-446e-41a9-814d-0fda2dfa95e5)
-[スクリーンショット 2025-01-24 201335](https://github.com/user-attachments/assets/37bcebb2-44de-4a1a-adee-433996ff3318)
+![スクリーンショット 2025-02-04 003503](https://github.com/user-attachments/assets/8ef5cb43-cf76-4cfe-8735-ebade2c619ed)
+![スクリーンショット 2025-02-04 003514](https://github.com/user-attachments/assets/5ef22733-c94f-4956-aab5-211a32a54ddd)
+
 
 ・行った場所を写真や感想とともに投稿
-
+![スクリーンショット 2025-02-04 003645](https://github.com/user-attachments/assets/bec13502-ce7b-41f6-8bff-657ccc0c62fd)
 
 
 ・他のユーザーの投稿を閲覧し、気に入った投稿に「いいね」や「コメント」を残す
 （投稿詳細画面のスクショ）
+![スクリーンショット 2025-02-04 003603](https://github.com/user-attachments/assets/e515b9b8-e08b-4248-bf12-946f77ca4bff)
+
 
 ・キーワードやカテゴリ検索を使い、目的地に合わせた投稿をチェック
 （投稿一覧画面のスクショ）  
+![スクリーンショット 2025-02-04 003553](https://github.com/user-attachments/assets/98bf51b8-db1b-418a-8919-b8519afb73a3)
+
+
 
 # 機能一覧
 ・基本的なCRUD機能  
