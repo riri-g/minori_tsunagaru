@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        message:
+          attributes:
+            content:
+              blank: "メッセージの内容を入力してください"
+              too_long: "140文字以内で入力してください"

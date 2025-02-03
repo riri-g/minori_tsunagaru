@@ -10,6 +10,16 @@
     <% end %>
   <% end %>
 
+  <% if @message && @message.errors.any? %>
+  <div class="card text-center text-white bg-danger mt-3">
+  <!-- <p><%= @message.errors.count %> 件のエラーが発生しました。</p> -->
+      <% @message.errors.full_messages.each do |message| %>
+        <ul><%= message %></ul>
+      <% end %>
+    </p>
+  </div>
+<% end %>
+
   <hr>
 
   <div class="chat">
@@ -48,9 +58,7 @@
       <% end %>
     </div>
 
-    <div class="errors">
-      <%= render "layouts/errors", obj: @message %>
-    </div>
+   
   
     <div class="posts">
       <%= form_with model: @message, local: false do |f| %>

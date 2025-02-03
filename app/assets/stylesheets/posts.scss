@@ -48,12 +48,17 @@
 
 .center-form {
   display: flex;
-  justify-content: center;  /* 水平方向の中央揃え */
-  align-items: center;      /* 垂直方向の中央揃え */           /* 親要素の高さを画面全体の高さに設定 */
   width: 100%;
   margin: 0 auto;
 }
 
+.row .mt-5 {
+  width: 100%;
+  flex-wrap: wrap; /* 横幅が足りない場合に折り返し */
+  justify-content: center; /* 中央揃え */
+  align-items: flex-start; /* アイテムを上揃え */
+  gap: 20px; /* アイテム間の間隔を追加 */
+}
 
 .search-form-4 {
   display: flex;
@@ -151,10 +156,7 @@ h1{
   text-align: center;
 }
 
-.post.image {
-  width: 300px;   /* 幅を200pxに設定 */
-  height: 300px;  /* 高さを200pxに設定 */
-}
+
 
 
 .pagination {
@@ -198,7 +200,7 @@ h1{
   width: 100%;
 }
 
-.comments p,a{
+.comments p {
   font-size: 1.5rem;
 }
 .comments-index{
@@ -263,7 +265,7 @@ h1{
     font-size: 1.5rem;
   }
   
-  .comments p,a{
+  .comments p {
     font-size: 1rem;
   }
   .comments-index{
@@ -340,7 +342,7 @@ h1{
   font-size: 1.25rem;
 }
 
-.comments p,a,a.btn{
+.comments p,a.btn{
   font-size: 0.7rem;
 }
 .comments-index{
