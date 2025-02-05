@@ -62,7 +62,7 @@
       <div class="container-fluid d-flex flex-column align-items-center mt-5">
         <%= form_with(model: [@post, @comment], local: true, class: "w-50") do |f| %>
           <%= f.text_area :comment, size: "60x3", placeholder: "コメントする", class: "form-control mb-2" %>
-          <%= f.submit "送信する", class: "btn btn-success mb-4" %>
+          <%= f.submit "送信する", class: "btn btn-secondary mb-4" %>
         <% end %>
 
         <p>コメント件数：<%= @comments.count %></p>

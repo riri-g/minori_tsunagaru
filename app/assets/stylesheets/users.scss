@@ -153,25 +153,11 @@ input[type="file"] {
 }
 
 
-button.btn {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  background-color: #4e7a59;
-  border: none;
-  color: white;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-button.btn:hover {
-  background-color: #218838;
-}
-
 .message-icon {
   width: 50px; 
   height: auto;
 }
+
 
 @media screen and (max-width: 1043px) {
 

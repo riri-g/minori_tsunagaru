@@ -18,12 +18,12 @@
     width: 100%;
     display: table;
     align-items: center;
-    background-image: url(top_background.png);
+    background-image: image-url("top_background.png");
     background-color: rgb(86, 129, 126);
     background-blend-mode:lighten;
-    background-size: 50%; /* 画面いっぱいに広げる */
-    background-position: center center; /* 中央配置 */
-    background-repeat: no-repeat; /* 繰り返しなし */
+    background-size: 50%;
+    background-position: center center; 
+    background-repeat: no-repeat; 
   }
 
 
@@ -34,8 +34,8 @@
 
   .button-group {
     display: flex;
-    gap: 30px; /* ボタンの間隔を20pxに */
-    justify-content: center; /* 中央揃え */
+    gap: 30px; 
+    justify-content: center;
    }
 
   .btn-flat-simple {
@@ -72,7 +72,7 @@
   }
 
   .button-group {
-    gap: 10px; /* ボタンの間隔を20pxに */
+    gap: 10px; 
    }
   }
 
@@ -92,9 +92,8 @@
     }
 
     .button-group {
-      gap: 10px; /* ボタンの間隔を20pxに */
-     }
+      gap: 10px; 
   
  }
 
- 
+ }

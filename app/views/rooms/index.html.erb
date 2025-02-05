@@ -1,3 +1,16 @@
+
+<% content_for :custom_styles do %>
+  <style>
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 600px;
+      margin: auto;
+    }
+  </style>
+<% end %>
+
 <div class="container-fluid w-100">
   <% @another_entries.each do |entry| %>
     <% if entry.room.messages.any? %> <!-- メッセージが存在する場合にのみ表示 -->

@@ -54,10 +54,10 @@
 
 .row .mt-5 {
   width: 100%;
-  flex-wrap: wrap; /* 横幅が足りない場合に折り返し */
-  justify-content: center; /* 中央揃え */
-  align-items: flex-start; /* アイテムを上揃え */
-  gap: 20px; /* アイテム間の間隔を追加 */
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 20px; 
 }
 
 .search-form-4 {
@@ -74,15 +74,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 400px; /* 最大幅を500pxに設定 */
+  max-width: 400px; 
   padding: 10px;
   margin-bottom: 15px;
-  box-sizing: border-box;  /* paddingを幅に含める */
+  box-sizing: border-box;  
   font-size: 1.5rem;
 }
 
 .search-form-4 .btn {
-  margin-bottom: 10px; /* ボタンの間隔を調整 */
+  margin-bottom: 10px; 
   
 }
 
@@ -94,42 +94,27 @@
 }
 
 .comments {
-  margin-left: 5rem; /* 左側の余白 */
-  margin-top: 5rem;  /* 上側の余白 */
-  width: 80%;        /* コンテンツ幅を調整 */
+  margin-left: 5rem; 
+  margin-top: 5rem;  
+  width: 80%;       
 }
 
 
 h1{
-  color: rgb(86, 129, 126);/*文字色*/
-  padding: 0.5em 0;/*上下の余白*/
-  border-top: solid 3px rgb(86, 129, 126);/*上線*/
-  border-bottom: solid 3px rgb(86, 129, 126);/*下線*/
-  font-weight: bold; /* 太文字 */
+  color: rgb(86, 129, 126);
+  padding: 0.5em 0;
+  border-top: solid 3px rgb(86, 129, 126);
+  border-bottom: solid 3px rgb(86, 129, 126);
+  font-weight: bold; 
 }
 
-.btn.btn-primary {
-  display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: white;
-  background: rgb(98, 103, 127);
-  border: solid 2px rgb(98, 103, 127);
-  border-radius: 3px;
-  transition: .4s;
-}
-
-.btn.btn-primary:hover {
-  background: white;
-  color: rgb(98, 103, 127);
-}
 
 
 .container-fluid d-flex mt-5{
   display: flex;
   width: 100vw; 
-  justify-content: center; /* 水平方向の中央揃え */
-  align-items: flex-start; /* 垂直方向の中央揃え */
+  justify-content: center; 
+  align-items: flex-start; 
   margin: 0;
 }
 
@@ -137,9 +122,9 @@ h1{
 .row .mt-5 {
   width: 100%;
   display: flex;
-  flex-wrap: wrap; /* 横幅が足りない場合、折り返し */
-  justify-content: center; /* 水平方向の中央揃え */
-  align-items: flex-start; /* 垂直方向の中央揃え */
+  flex-wrap: wrap; 
+  justify-content: center; 
+  align-items: flex-start; 
   margin-left: 0;
   margin-right: 0;
 }
@@ -149,9 +134,9 @@ h1{
 
 .one-post {
   display: flex;
-  justify-content: center; /* コンテンツを中央に配置 */
-  align-items: center; /* コンテンツを縦にも中央に配置 */
-  margin-bottom: 4rem; /* 少し下の余白 */
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 4rem; 
   font-size: 1.5rem;
   text-align: center;
 }
@@ -163,32 +148,19 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto; /* 水平中央揃え */
+  margin: 0 auto; 
 }
 
-.btn.btn-success{
-  display: inline-block;
-  padding: 0.3em 1em;
-  text-decoration: none;
-  color: white;
-  background: rgb(98, 103, 127);
-  border: solid 2px rgb(98, 103, 127);
-  border-radius: 3px;
-  transition: .4s;
-}
 
-.btn.btn-success:hover {
-  background: white;
-  color: rgb(98, 103, 127);
-} 
+
 
 .btn {
   font-size: 1.5rem;
 }
 
 .form-group .btn {
-  height: 40px; /* ボタンの最小高さを指定 */
-  padding: 10px 20px; /* 内側の余白を適切に調整 */
+  height: 40px; 
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,8 +197,8 @@ h1{
 @media screen and (max-width:1043px) {
 
   .one-post {
-    width: calc(100% / 3 - 10px); /* 3列に並べる */
-    margin: 3px; /* 少し余白をつける */
+    width: calc(100% / 3 - 10px); 
+    margin: 3px; 
     display: flex;
     flex-direction: column;
   }
@@ -241,9 +213,9 @@ h1{
   }
 
   .font-weight-normal {
-    position: relative; /* 他の要素と独立させる */
-    z-index: 5; /* 必要に応じて優先順位を変更 */
-    margin-top: 100px !important; /* 上部に余白を確保 */
+    position: relative; 
+    z-index: 5; 
+    margin-top: 100px !important; 
   
   }
 
@@ -257,7 +229,7 @@ h1{
 
 
   .image-container {
-    margin-right: 0px; /* 画像と詳細の間隔 */
+    margin-right: 0px;
     width: 70%;
   }
 
@@ -308,8 +280,8 @@ h1{
 
 @media screen and (max-width: 768px) {
   .one-post {
-    width: calc(100% / 3 - 10px); /* 3列に並べる */
-    margin: 1px; /* 少し余白をつける */
+    width: calc(100% / 3 - 10px); 
+    margin: 1px; 
     display: flex;
     flex-direction: column;
     font-size: 1rem;
@@ -321,20 +293,20 @@ h1{
   }
 
 .comments {
-  margin-left: 1rem; /* スマホで左の余白を減らす */
-  margin-right: 1rem; /* スマホで上の余白を大幅に増やす */
-  width: 100%;        /* スマホ画面に合わせて幅を調整 */
+  margin-left: 1rem; 
+  margin-right: 1rem; 
+  width: 100%;        
 }
 
 .font-weight-normal {
-  position: relative; /* 他の要素と独立させる */
-  z-index: 5; /* 必要に応じて優先順位を変更 */
-  margin-top: 80px !important; /* 上部に余白を確保 */
+  position: relative; 
+  z-index: 5; 
+  margin-top: 80px !important;
 
 }
 
 .image-container {
-  margin-right: 0px; /* 画像と詳細の間隔 */
+  margin-right: 0px;
   width: 50%;
 }
 
