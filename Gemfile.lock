@@ -201,6 +201,7 @@ GEM
     nokogiri (1.18.2-x64-mingw-ucrt)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pg (1.5.9-x64-mingw-ucrt)
     popper_js (2.11.8)
     pp (0.6.2)
       prettyprint
@@ -344,6 +345,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   kaminari
+  pg
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)
   refile!
