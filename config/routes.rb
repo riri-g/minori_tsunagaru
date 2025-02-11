@@ -35,5 +35,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root 'homes#top'
+
+  get '/debug/migrate', to: 'debug#migrate'
 end
 
