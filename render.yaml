@@ -12,7 +12,9 @@ services:
     plan: free
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
-    preDeployCommand: ./bin/rails db:migrate
+    preDeployCommand: |
+  ./bin/rails db:migrate
+  ./bin/rails db:seed
                      
     envVars:
       - key: DATABASE_URL
