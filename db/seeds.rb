@@ -7,11 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-puts "Seeding categories..."
 
-['野菜', '果物', 'お米', 'その他'].each do |category_name|
-  category = Category.find_or_create_by!(name: category_name)
-  puts "Created or Found: #{category.name}"
-end
-
-puts "Seeding completed!"
+Category.find_or_create_by!(name: '野菜')
+Category.find_or_create_by!(name: '果物')
+Category.find_or_create_by!(name: 'お米')
+Category.find_or_create_by!(name: 'その他')
