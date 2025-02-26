@@ -1,9 +1,9 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 # exit on error
 set -o errexit
 
 apt-get update && apt-get install -y libpq-dev
 bundle install
 bundle exec rails assets:precompile
-bundle exec rails db:migrate
-bundle exec rails db:seed RAILS_ENV=production
+DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:migrate:reset
+bundle exec rails db:seed
