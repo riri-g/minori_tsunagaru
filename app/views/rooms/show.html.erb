@@ -42,6 +42,9 @@
               <div class="chat-time">
                 <%= m.created_at.strftime("%H:%M") %> <!-- 時間 -->
               </div>
+                 <%= link_to "削除", room_message_path(@room, m), method: :delete, data: { turbo_confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm" %>
+
+            
             </div>
           <% else %>
             <!-- 相手のメッセージ -->
@@ -61,11 +64,11 @@
    
   
     <div class="posts">
-      <%= form_with model: @message, local: false do |f| %>
-        <%= f.text_field :content, placeholder: "140字以内でメッセージを入力してください", size: 70, class: "form-text-field" %>
-        <%= f.hidden_field :room_id, value: @room.id %>
-        <%= f.submit "送信", class: "form-submit" %>
-      <% end %>
+    <%= form_with model: @message do |f| %>
+      <%= f.text_field :content, placeholder: "140字以内でメッセージを入力してください", size: 70, class: "form-text-field" %>
+      <%= f.hidden_field :room_id, value: @room.id %>
+      <%= f.submit "送信", class: "form-submit" %>
+    <% end %>
     </div>
   </div>
 </div>

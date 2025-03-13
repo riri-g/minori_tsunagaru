@@ -27,4 +27,19 @@ class RoomsController < ApplicationController
       redirect_back(fallback_location: root_path)
     end
   end
+
+  def destroy_message
+    @room = Room.find(params[:room_id])
+    @message = @room.messages.find(params[:id])
+
+    if @message.user_id == current_user.id
+      @message.destroy
+      respond_to do |format|
+        format.turbo_stream  # Turbo Streamでリアルタイムに削除を反映
+        format.html { redirect_to @room, notice: "メッセージを削除しました。" }
+      end
+    else
+      redirect_to @room, alert: "他人のメッセージは削除できません。"
+    end
+  end
 end

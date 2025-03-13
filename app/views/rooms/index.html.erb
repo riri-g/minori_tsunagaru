@@ -1,40 +1,46 @@
-
-<% content_for :custom_styles do %>
-  <style>
-    .card {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      max-width: 600px;
-      margin: auto;
-    }
-  </style>
-<% end %>
-
-<div class="container-fluid w-100">
-  <% @another_entries.each do |entry| %>
-    <% if entry.room.messages.any? %> <!-- メッセージが存在する場合にのみ表示 -->
-      <%= link_to room_path(entry.room), style: "text-decoration: none;" do %>
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex message">
-              <div class="chat-avatar">
-                <%= link_to room_path(entry.room) do %>
-                  <%= attachment_image_tag entry.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "mt-3 profile-img" %>
-                <% end %>
+<% @another_entries.each do |entry| %>
+  <% if entry.room.messages.exists? %> <!-- メッセージが存在する場合にのみ表示 -->
+    <%= link_to room_path(entry.room), style: "text-decoration: none;" do %>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex message">
+            <div class="chat-avatar">
+              <%= attachment_image_tag entry.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "mt-3 profile-img" %>
+            </div>
+            <div class="chat-user_name">
+              <span class="fw-bold me-2">
+                <%= entry.user.name %>
+              </span>
+              <div class="chat-text">
+                <!-- 最新メッセージを取得 -->
+                <%= entry.room.messages.order(created_at: :desc).first&.content || "まだメッセージがありません" %>
               </div>
-              <div class="chat-user_name">
-                <span class="fw-bold me-2">
-                  <%= entry.user.name %>
-                </span>
-                <div class="chat-text">
-                  <%= entry.room.messages.last&.message || "まだメッセージがありません" %>
-                </div>
-              </div>
+              <% if current_user && entry.room.messages.order(created_at: :desc).first&.created_at > current_user.last_sign_in_at %>
+                <!-- メッセージが新しい場合、"新着" マークを表示 -->
+                <span class="new-mark">新着</span>
+              <% end %>
             </div>
           </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
+  <% else %>
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex message">
+          <div class="chat-avatar">
+            <%= attachment_image_tag entry.user, :profile_image, size: '40x40', fallback: "no_image.svg", class: "mt-3 profile-img" %>
+          </div>
+          <div class="chat-user_name">
+            <span class="fw-bold me-2">
+              <%= entry.user.name %>
+            </span>
+            <div class="chat-text">
+              まだメッセージがありません
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-</div>
+<% end %>

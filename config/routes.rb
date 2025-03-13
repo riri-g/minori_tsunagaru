@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   get 'categories/edit'
   resources :categories, except: [:new, :show]
   resources :messages, only: [:create]
-  resources :rooms, only: [:create, :index, :show]
-
+  resources :rooms, only: [:create, :index, :show, :destroy] do
+    resources :messages, only: [:destroy]  
+  end
   devise_for :users
 
   resources :users, only:[:index, :show, :edit, :update] do
