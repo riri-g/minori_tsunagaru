@@ -116,7 +116,13 @@ body {
   .header__inner.active {
     display: block; /* メニューを表示する */
   }
-
+  
+  .header__inner.active .header__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
 
 }
 
